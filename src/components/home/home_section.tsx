@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import heroImg from '../../../public/images/home/hero chris photo 1.png';
+import heroImg from '../../../public/images/home/hero chris photo.png';
 import { Geist_Mono } from "next/font/google";
 import HomeText from './text_home';
 
 const geistMono = Geist_Mono({
-    variable: '--font-archivo', // Optional: Use with Tailwind CSS
+    variable: '--font-geist-mono', // Optional: Use with Tailwind CSS
     subsets: ['latin'],
 })
 
@@ -58,10 +58,26 @@ export default function HomeSection() {
                     />
                 </div>
             </div>
-            <div className='flex flex-row gap-8 bg-[#101920] py-11.5'>
+            <div className='flex flex-row gap-8 bg-[#101920] py-11.5 justify-center'>
                 <HomeText
                     title='20+'
                     description={'years of\nprofessional IT/MIS\nexperience'}
+                />
+                <HomeText
+                    title='10+'
+                    description={'major industries worked across,\nincluding tech, aerospace, HR,\nand hospitality'}
+                />
+                <HomeText
+                    title='1500+'
+                    description={'students taught at\nthe University post\ngraduate level'}
+                />
+                <HomeText
+                    title='150+'
+                    description={'professional and\nacademia courses\ndelivered'}
+                />
+                <HomeText
+                    title='15+'
+                    description={'professional industry\ncertifications and/or\ndesignations attained'}
                 />
             </div>
         </div>
