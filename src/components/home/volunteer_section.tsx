@@ -13,7 +13,7 @@ export default function VolunteerSection() {
                 Volunteer Initiatives
             </h3>
             <span className="text-2xl font-normal text-[#62748E]">
-                Active and past involvement with organizations I'm very supportive of.
+                Active and past involvement with organizations I&apos;m very supportive of.
             </span>
         </div>
         <CarouselVolenteer />

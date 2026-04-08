@@ -25,15 +25,13 @@ export default function CardService({ title, image, listItem }: CardServiceProps
                     {title}
                 </h6>
                 <div className="flex-row flex gap-2">
-                    {listItem.map((item) => {
-                        return (
-                            <div className="bg-[#F3F4F6] rounded-[10px] justify-center items-center p-2">
+                    {listItem.map((item) => (
+                            <div key={item} className="bg-[#F3F4F6] rounded-[10px] justify-center items-center p-2">
                                 <span className={`text-sm text-[#14744C] font-normal ${archivo.className}`}>
                                     {item}
                                 </span>
                             </div>
-                        );
-                    })}
+                    ))}
                 </div>
             </div>
         </div>

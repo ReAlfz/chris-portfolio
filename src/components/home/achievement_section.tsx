@@ -16,7 +16,7 @@ export default function AchievementSection() {
                         Achievements
                     </h2>
                     <h5 className={`text-3xl text-[#1A9B66] pt-11.75 font-semibold italic ${archivo.className}`}>
-                        “I've done this before”
+                        “I&apos;ve done this before”
                     </h5>
                     <h6 className={`text-2xl text-[#6A7282] pt-3.5 ${archivo.className} whitespace-pre-line`}>
                         {"...is what I tell myself every time I feel\nlike quitting"}

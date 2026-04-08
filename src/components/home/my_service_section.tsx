@@ -47,17 +47,18 @@ export default function MyServiceSection() {
                     My Services
                 </h3>
                 <span className="text-2xl font-normal text-[#62748E] pt-2.5">
-                    Service offerings that I'm extremely passionate about.
+                    Service offerings that I&apos;m extremely passionate about.
                 </span>
             </div>
             <div className="grid grid-cols-2 gap-8 justify-center items-center pb-16.75">
-                {listItem.map((item) => {
-                    return <CardService
+                {listItem.map((item) => (
+                    <CardService
+                        key={item.title}
                         title={item.title}
                         image={item.image}
                         listItem={item.list}
                     />
-                })}
+                ))}
             </div>
             <div className="bg-[#1A9B66] rounded w-fit">
                 <h6 className={`text-2xl px-12 py-4 text-white font-semibold ${archivo.className}`}>

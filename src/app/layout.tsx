@@ -5,9 +5,9 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 const archivo = Archivo({
-  variable: '--font-archivo', // Optional: Use with Tailwind CSS
-  subsets: ['latin'],
-})
+  variable: "--font-archivo",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${archivo.className} antialiased`}
+        className={`${archivo.variable} font-sans antialiased`}
       >
         <Header />
         {children}

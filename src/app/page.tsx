@@ -6,7 +6,7 @@ import AchievementSection from "@/components/home/achievement_section";
 
 export default function Home() {
   return (
-    <main className="flex flex-col bg-[#F9FAFB]">
+    <main className="flex flex-col bg-canvas">
       <HomeSection />
       <TedxSection />
       <MyServiceSection />
