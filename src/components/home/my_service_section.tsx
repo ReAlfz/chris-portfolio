@@ -3,7 +3,7 @@ import agileCampImg from "../../../public/images/home/agile_camps.jpg";
 import mentalHealthImg from "../../../public/images/home/mental_health.jpg";
 import studentGroupImg from "../../../public/images/home/student_group.jpg";
 import caseCompetitionImg from "../../../public/images/home/case_competition.jpg";
-import CardService from "./card_service";
+import CardService from "./widget/card_service";
 import { Archivo } from "next/font/google";
 
 const archivo = Archivo({

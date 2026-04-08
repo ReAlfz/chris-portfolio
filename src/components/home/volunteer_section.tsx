@@ -1,5 +1,5 @@
 import { Archivo } from "next/font/google"
-import CarouselVolenteer from "./carousel_volunteer"
+import CarouselVolenteer from "./widget/carousel_volunteer"
 
 const archivo = Archivo({
     variable: '--font-archivo', // Optional: Use with Tailwind CSS
@@ -17,5 +17,10 @@ export default function VolunteerSection() {
             </span>
         </div>
         <CarouselVolenteer />
+        <div className="mt-15.5 bg-[#1A9B66] w-fit h-15 py-4 px-12 justify-center items-center flex">
+            <h6 className={`text-2xl font-semibold ${archivo.className}`}>
+                See All Initiatives
+            </h6>
+        </div>
     </div>
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import tedxLogo from "../../../public/images/tedx_logo.png";
+import tedxLogo from "../../../../public/images/tedx_logo.png";
 import { Inter } from "next/font/google";
 
 const inter = Inter({

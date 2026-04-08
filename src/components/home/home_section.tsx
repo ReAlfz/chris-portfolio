@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import heroImg from '../../../public/images/home/hero chris photo.png';
 import { Geist_Mono } from "next/font/google";
-import HomeText from './text_home';
+import HomeText from './widget/text_home';
 
 const geistMono = Geist_Mono({
     variable: '--font-geist-mono', // Optional: Use with Tailwind CSS

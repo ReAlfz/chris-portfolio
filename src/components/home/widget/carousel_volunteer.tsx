@@ -1,9 +1,9 @@
 "use client"
 
 import Image, { StaticImageData } from "next/image";
-import juniorAchievment from "../../../public/images/home/junior_achievement.jpg";
-import coachingBasket from "../../../public/images/home/coaching_basket.jpg";
-import bigBrotherWinnipeg from "../../../public/images/home/big_brother_winnipeg.jpg";
+import juniorAchievment from "../../../../public/images/home/junior_achievement.jpg";
+import coachingBasket from "../../../../public/images/home/coaching_basket.jpg";
+import bigBrotherWinnipeg from "../../../../public/images/home/big_brother_winnipeg.jpg";
 import { useState } from "react";
 import { Archivo } from "next/font/google";
 
@@ -55,17 +55,22 @@ export default function CarouselVolenteer() {
                 </svg>
             </button>
 
-            <div className="flex items-start gap-5.75 w-full px-12">
+            <div className="flex items-start gap-5.75 w-full px-12 h-130.5">
                 {[-1, 0, 1].map((offset) => {
                     const index = getIndex(offset);
                     const item = items[index];
                     const isActive = offset == 0;
 
                     return (
-                        <div key={index}
-                            className={`flex-1 transition-all duration-300 ${isActive ? "" : "w-100 opacity-80"}`}>
+                        <div key={item.title}
+                            className={`h-full`}
+                            style={{
+                                flex: isActive ? "2 1 0%" : "0 0 260px",
+                                transition: "flex 0.4s ease, opacity 0.4s ease",
+                                opacity: isActive ? 1 : 0.8,
+                            }}>
                             <div className={`rounded-sm overflow-hidden border border-[#E5E7EB]`}>
-                                <div className="relative w-full h-52">
+                                <div className={`relative w-full ${isActive ? "h-75" : "h-100"}`}>
                                     <Image
                                         src={item.image}
                                         alt={item.title}
@@ -75,13 +80,13 @@ export default function CarouselVolenteer() {
                                 </div>
 
                                 <div className="flex flex-col items-center justify-center pt-5.25 pb-8">
-                                    <h5 className={`text-3xl text-center text-[#101920] font-semibold ${archivo.className}`}>
+                                    <h5 className={`${isActive ? "text-3xl" : "text-2xl"} text-center text-[#101920] font-semibold ${archivo.className}`}>
                                         {item.title}
                                     </h5>
 
                                     {isActive && (
                                         <>
-                                            <span className={`font-normal text-[18px] text-[#6A7282] text-center pt-3`}>
+                                            <span className={`transition-none font-normal text-[18px] text-[#6A7282] text-center pt-3`}>
                                                 {item.description}
                                             </span>
                                             <span className={`font-normal text-[18px] text-[#6A7282] text-center pt-7`}>
