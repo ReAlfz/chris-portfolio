@@ -21,6 +21,10 @@
   --primitive-surface-tint: #f8fafc;
   --primitive-surface-muted: #f3f4f6;
   --primitive-white: #ffffff;
+  --primitive-hero-mint: #f0fdf4;
+  --primitive-slate-800: #1e2939;
+  --primitive-slate-700: #364153;
+  --primitive-narrative: #6d7a8a;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -47,6 +51,10 @@
   --color-brand-tint: var(--primitive-brand-tint);
   --color-ted: var(--primitive-ted-red);
   --color-neutral-dark: var(--primitive-neutral-dark);
+  --color-hero-mint: var(--primitive-hero-mint);
+  --color-card-bar: var(--primitive-slate-800);
+  --color-card-bar-active: var(--primitive-slate-700);
+  --color-narrative: var(--primitive-narrative);
 
   /* Typography — Figma type ramp (named steps) */
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
