@@ -41,12 +41,12 @@ export default function MyServiceSection() {
     ];
 
     return (
-        <div className="flex flex-col py-21.5 bg-[#F8FAFC] justify-center items-center">
-            <div className="flex flex-col pb-13.75 justify-center items-center">
-                <h3 className="text-[53px] text-[#101920] font-semibold">
+        <div className="flex flex-col items-center justify-center bg-surface-tint py-21.5">
+            <div className="flex flex-col items-center justify-center pb-13.75">
+                <h3 className="text-display font-semibold text-ink">
                     My Services
                 </h3>
-                <span className="text-2xl font-normal text-[#62748E] pt-2.5">
+                <span className="pt-2.5 text-2xl font-normal text-caption">
                     Service offerings that I&apos;m extremely passionate about.
                 </span>
             </div>
@@ -60,8 +60,8 @@ export default function MyServiceSection() {
                     />
                 ))}
             </div>
-            <div className="bg-[#1A9B66] rounded w-fit">
-                <h6 className={`text-2xl px-12 py-4 text-white font-semibold ${archivo.className}`}>
+            <div className="w-fit rounded bg-brand">
+                <h6 className={`px-12 py-4 text-2xl font-semibold text-on-brand ${archivo.className}`}>
                     View All Services
                 </h6>
             </div>

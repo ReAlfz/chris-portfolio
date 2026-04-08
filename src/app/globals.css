@@ -5,12 +5,21 @@
 /* -------------------------------------------------------------------------- */
 :root {
   --primitive-brand-600: #1a9b66;
+  --primitive-brand-700: #14744c;
+  --primitive-brand-tint: #d3f3e5;
   --primitive-ink: #101920;
   --primitive-snow: #fafafa;
   --primitive-muted: #99a1af;
   --primitive-subtle: #6a7282;
+  --primitive-caption: #62748e;
+  --primitive-heading: #1d293d;
+  --primitive-neutral-dark: #1a1a20;
+  --primitive-ted-red: #ee2921;
   --primitive-border: #d1d5dc;
+  --primitive-border-card: #e5e7eb;
   --primitive-canvas: #f9fafb;
+  --primitive-surface-tint: #f8fafc;
+  --primitive-surface-muted: #f3f4f6;
   --primitive-white: #ffffff;
 }
 
@@ -28,6 +37,16 @@
   --color-border: var(--primitive-border);
   --color-canvas: var(--primitive-canvas);
   --color-surface: var(--primitive-white);
+  --color-surface-soft: var(--primitive-snow);
+  --color-surface-tint: var(--primitive-surface-tint);
+  --color-surface-muted: var(--primitive-surface-muted);
+  --color-border-card: var(--primitive-border-card);
+  --color-heading: var(--primitive-heading);
+  --color-caption: var(--primitive-caption);
+  --color-brand-strong: var(--primitive-brand-700);
+  --color-brand-tint: var(--primitive-brand-tint);
+  --color-ted: var(--primitive-ted-red);
+  --color-neutral-dark: var(--primitive-neutral-dark);
 
   /* Typography — Figma type ramp (named steps) */
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
