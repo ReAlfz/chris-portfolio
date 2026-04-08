@@ -1,10 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Archivo, Archivo_Narrow } from "next/font/google";
 
 /**
- * Figma: node 266:816 — Chris Hoquis Portfolio (Copy)
- * https://www.figma.com/design/Fjz0sKrNyk7IhKLvAxv0LV/…?node-id=266-816
- * Asset URLs refreshed from MCP; re-export to /public if links expire.
+ * Portfolio landing — built from the “My Portfolio” frame in Figma (node 266:816).
+ *
+ * What you’re looking at:
+ * - A full-bleed hero, personal narrative with masked portrait, category cards, and a
+ *   contact form block. Spacing and type sizes were matched to the 1440px desktop frame,
+ *   then loosened slightly for smaller breakpoints so nothing collides.
+ * - Remote images point at Figma MCP asset URLs; they expire about weekly unless you
+ *   download them into `public/` and swap the paths in `ASSETS` below.
  */
 const ASSETS = {
   heroBg:
@@ -53,6 +59,11 @@ const archivoNarrow = Archivo_Narrow({
 /** Figma: expanded footer overlaps image by 105px (image ends 741, footer starts 636). */
 const SPEAKING_OVERLAP = 105;
 
+/**
+ * Category tile from the Figma grid. The “Speaking Events” variant is taller and shows
+ * a short blurb under the title bar; everything else is a simple thumb + label.
+ * Pass `href` when the card should navigate (e.g. Rally the Locals has its own page).
+ */
 function CategoryCard({
   title,
   imageSrc,
@@ -60,6 +71,7 @@ function CategoryCard({
   alt,
   expanded,
   description,
+  href,
 }: {
   title: string;
   imageSrc: string;
@@ -67,6 +79,8 @@ function CategoryCard({
   alt: string;
   expanded?: boolean;
   description?: string;
+  /** If set, the whole card becomes a link (used for Rally → `/rally-the-local`). */
+  href?: string;
 }) {
   const h = imageHeight;
 
@@ -110,8 +124,8 @@ function CategoryCard({
     );
   }
 
-  return (
-    <article className="w-full max-w-[320px] shrink-0 overflow-hidden rounded-[20px] bg-card-bar shadow-sm">
+  const card = (
+    <article className="w-full max-w-[320px] shrink-0 overflow-hidden rounded-[20px] bg-card-bar shadow-sm transition-opacity hover:opacity-95">
       <div className="relative w-full overflow-hidden rounded-t-[20px]" style={{ height: h }}>
         <Image src={imageSrc} alt={alt} fill className="object-cover" sizes="320px" />
       </div>
@@ -122,8 +136,22 @@ function CategoryCard({
       </div>
     </article>
   );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className="block w-full max-w-[320px] shrink-0 rounded-[20px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      >
+        {card}
+      </Link>
+    );
+  }
+
+  return card;
 }
 
+/** Dark “Get In Touch” band at the bottom of the portfolio frame (decorative form). */
 function GetInTouchBlock() {
   const fieldClass = `h-10 w-full rounded-[2px] bg-card-bar px-3 text-sm font-medium leading-[1.2] text-on-brand placeholder:text-muted ${archivo.className}`;
 
@@ -248,6 +276,7 @@ function GetInTouchBlock() {
   );
 }
 
+/** Full portfolio page content: hero → narrative → categories → contact. */
 export default function PortfolioProjects() {
   return (
     <div className="mx-auto w-full max-w-[1440px]">
@@ -432,6 +461,7 @@ export default function PortfolioProjects() {
               imageSrc={ASSETS.catRally}
               imageHeight={458}
               alt="Rally the Locals"
+              href="/rally-the-local"
             />
             <CategoryCard
               title="Agile Workshops"

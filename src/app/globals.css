@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Design tokens: CSS variables + Tailwind v4 @theme mapping. If Figma colors change,
+   update the primitives first; semantic names (brand, ink, canvas, …) stay stable. */
+
 /* -------------------------------------------------------------------------- */
 /* Primitives — raw values (mirror Figma tokens)                               */
 /* -------------------------------------------------------------------------- */

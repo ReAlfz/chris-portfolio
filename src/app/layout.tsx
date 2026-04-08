@@ -1,3 +1,7 @@
+/**
+ * Root layout for every route: loads global CSS + Archivo, then wraps all pages with
+ * the shared marketing header and footer. Page files only supply the middle column.
+ */
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";

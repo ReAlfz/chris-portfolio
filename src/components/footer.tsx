@@ -1,3 +1,7 @@
+/**
+ * Global footer: logo, RTL submark, socials, and link columns. `id="contact"` is
+ * what the header “Contact Me” button scrolls to.
+ */
 import Image from "next/image";
 import logoImg from "../../public/images/header_and_footer/Logo.png";
 import rallyImg from "../../public/images/header_and_footer/rally_the_local.png";

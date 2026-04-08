@@ -1,3 +1,4 @@
+/** My Portfolio — composes the large `PortfolioProjects` section stack. */
 import PortfolioProjects from "@/components/portfolio/portfolio_projects";
 
 export default function PortfolioPage() {
