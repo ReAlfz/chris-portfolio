@@ -103,19 +103,19 @@ function CategoryCard({
             alt=""
             width={36}
             height={36}
-            className="pointer-events-none absolute left-[284px] top-[368px]"
+            className="pointer-events-none absolute left-71 top-92"
             aria-hidden
           />
         </div>
         <div
-          className="relative z-10 flex min-h-[172px] w-full flex-col items-center rounded-b-[20px] bg-card-bar-active px-4 pb-5 pt-4 text-center text-on-brand"
+          className="relative z-10 flex min-h-43 w-full flex-col items-center rounded-b-[20px] bg-card-bar-active px-4 pb-5 pt-4 text-center text-on-brand"
           style={{ marginTop: -SPEAKING_OVERLAP }}
         >
           <h3 className={`text-2xl font-semibold leading-[1.2] ${archivo.className}`}>
             {title}
           </h3>
           <p
-            className={`mt-3 max-w-[246px] text-sm font-normal leading-[1.2] text-border ${archivo.className}`}
+            className={`mt-3 max-w-61.5 text-sm font-normal leading-[1.2] text-border ${archivo.className}`}
           >
             {description}
           </p>
@@ -130,7 +130,7 @@ function CategoryCard({
         <Image src={imageSrc} alt={alt} fill className="object-cover" sizes="320px" />
       </div>
       <div
-        className={`flex h-[72px] w-full flex-col items-center justify-center bg-card-bar px-4 text-center text-on-brand ${archivo.className}`}
+        className={`flex h-18 w-full flex-col items-center justify-center bg-card-bar px-4 text-center text-on-brand ${archivo.className}`}
       >
         <h3 className="text-2xl font-semibold leading-[1.2]">{title}</h3>
       </div>
@@ -141,7 +141,7 @@ function CategoryCard({
     return (
       <Link
         href={href}
-        className="block w-full max-w-[320px] shrink-0 rounded-[20px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+        className="block w-full max-w-[320px] shrink-0 rounded-[20px] focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-brand"
       >
         {card}
       </Link>
@@ -157,12 +157,12 @@ function GetInTouchBlock() {
 
   return (
     <section
-      className="min-h-[694px] bg-ink px-8 py-16 md:py-24"
+      className="min-h-173.5 bg-ink px-8 py-16 md:py-24"
       data-name="Get In Touch"
       data-node-id="561:4487"
     >
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-16 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-[52px]">
-        <div className="flex max-w-[461px] flex-col items-center gap-3 text-center lg:items-start lg:text-left">
+      <div className="mx-auto flex max-w-360 flex-col gap-16 lg:flex-row lg:items-start lg:justify-between lg:gap-8 lg:px-13">
+        <div className="flex max-w-115.25 flex-col items-center gap-3 text-center lg:items-start lg:text-left">
           <p
             className={`text-[70px] font-medium leading-none text-canvas ${archivo.className}`}
           >
@@ -172,14 +172,12 @@ function GetInTouchBlock() {
             {"chat!".split("").map((ch, i) => (
               <div
                 key={`${ch}-${i}`}
-                className={`flex size-[72px] items-center justify-center bg-brand text-canvas ${
-                  i === 0 ? "rounded-l-[10px]" : i === 4 ? "rounded-r-[10px]" : ""
-                }`}
+                className={`flex size-18 items-center justify-center bg-brand text-canvas ${i === 0 ? "rounded-l-[10px]" : i === 4 ? "rounded-r-[10px]" : ""
+                  }`}
               >
                 <span
-                  className={`text-[70px] font-normal leading-none ${archivo.className} ${
-                    ch === "!" ? "inline-block rotate-[15deg]" : ""
-                  }`}
+                  className={`text-[70px] font-normal leading-none ${archivo.className} ${ch === "!" ? "inline-block rotate-15" : ""
+                    }`}
                 >
                   {ch}
                 </span>
@@ -194,7 +192,7 @@ function GetInTouchBlock() {
           </div>
         </div>
 
-        <div className="w-full max-w-[442px] space-y-4">
+        <div className="w-full max-w-110.5 space-y-4">
           <h2
             className={`text-display font-semibold leading-[1.2] text-on-brand ${archivo.className}`}
           >
@@ -266,7 +264,7 @@ function GetInTouchBlock() {
                 name="message"
                 placeholder="Message"
                 rows={5}
-                className={`${fieldClass} min-h-[120px] resize-y py-2.5`}
+                className={`${fieldClass} min-h-30 resize-y py-2.5`}
               />
             </div>
           </form>
@@ -279,10 +277,10 @@ function GetInTouchBlock() {
 /** Full portfolio page content: hero → narrative → categories → contact. */
 export default function PortfolioProjects() {
   return (
-    <div className="mx-auto w-full max-w-[1440px]">
+    <div className="mx-auto w-full max-w-360">
       {/* Cover — Figma 272:2246 */}
       <section
-        className="relative h-[500px] w-full overflow-hidden bg-hero-mint"
+        className="relative h-125 w-full overflow-hidden bg-hero-mint"
         data-node-id="272:2246"
       >
         <div className="absolute inset-0 overflow-hidden">
@@ -306,15 +304,15 @@ export default function PortfolioProjects() {
 
       {/* Narrative — Figma 269:1183, min-height 722 */}
       <section
-        className="relative min-h-[722px] overflow-hidden bg-surface px-6 py-16 md:px-12 md:py-20"
+        className="relative min-h-180.5 overflow-hidden bg-surface px-6 py-16 md:px-12 md:py-20"
         data-name="Narrative"
         data-node-id="269:1183"
       >
         <div
-          className="pointer-events-none absolute right-0 top-0 hidden h-full w-1/2 max-w-[400px] lg:block"
+          className="pointer-events-none absolute right-0 top-0 hidden h-full w-1/2 max-w-100 lg:block"
           aria-hidden
         >
-          <div className="absolute right-8 top-3 h-[200px] w-[120px] opacity-90">
+          <div className="absolute right-8 top-3 h-50 w-30 opacity-90">
             <Image
               src={ASSETS.narrativeDeco1}
               alt=""
@@ -323,7 +321,7 @@ export default function PortfolioProjects() {
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="absolute right-32 top-64 h-[120px] w-[139px] -rotate-15 opacity-90">
+          <div className="absolute right-32 top-64 h-30 w-34.75 -rotate-15 opacity-90">
             <Image
               src={ASSETS.narrativeDeco2}
               alt=""
@@ -332,7 +330,7 @@ export default function PortfolioProjects() {
               className="h-full w-full object-contain"
             />
           </div>
-          <div className="absolute right-20 top-0 h-[150px] w-[155px] opacity-90">
+          <div className="absolute right-20 top-0 h-37.5 w-38.75 opacity-90">
             <Image
               src={ASSETS.narrativeDeco3}
               alt=""
@@ -343,9 +341,9 @@ export default function PortfolioProjects() {
           </div>
         </div>
 
-        <div className="relative z-[1] mx-auto flex max-w-[1200px] flex-col items-center gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+        <div className="relative z-1 mx-auto flex max-w-300 flex-col items-center gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           <div className="relative shrink-0 pl-4">
-            <div className="relative h-[297px] w-[211px]">
+            <div className="relative h-74.25 w-52.75">
               <Image
                 src={ASSETS.frameOutline}
                 alt=""
@@ -355,7 +353,7 @@ export default function PortfolioProjects() {
               />
             </div>
             <div
-              className="absolute left-1/2 top-[2.125rem] z-[1] h-[296px] w-[212px] -translate-x-1/2 overflow-hidden"
+              className="absolute left-1/2 top-8.5 z-1 h-74 w-53 -translate-x-1/2 overflow-hidden"
               style={{
                 WebkitMaskImage: `url('${ASSETS.portraitMask}')`,
                 maskImage: `url('${ASSETS.portraitMask}')`,
@@ -377,7 +375,7 @@ export default function PortfolioProjects() {
                 />
               </div>
             </div>
-            <div className="absolute left-0 top-0 z-[2] w-[66px]">
+            <div className="absolute left-0 top-0 z-2 w-16.5">
               <Image
                 src={ASSETS.zBlock}
                 alt=""
@@ -388,9 +386,9 @@ export default function PortfolioProjects() {
             </div>
           </div>
 
-          <div className="max-w-[679px] flex-1 text-center lg:text-left">
+          <div className="max-w-169.75 flex-1 text-center lg:text-left">
             <div
-              className={`text-[40px] font-semibold leading-[1.5] text-narrative ${archivoNarrow.className}`}
+              className={`text-[40px] font-semibold leading-normal text-narrative ${archivoNarrow.className}`}
             >
               <p>When I look back at my life,</p>
               <p>
@@ -400,14 +398,14 @@ export default function PortfolioProjects() {
               <p>cliché statements to try to motivate.</p>
             </div>
             <p
-              className={`mx-auto mt-8 max-w-[466px] text-[20px] font-normal leading-[1.5] text-narrative lg:mx-0 ${archivo.className}`}
+              className={`mx-auto mt-8 max-w-116.5 text-[20px] font-normal leading-normal text-narrative lg:mx-0 ${archivo.className}`}
             >
               I want others to see that I came from sincere belief that I did not deserve to be
               alive. To come from that, and accomplish what I&apos;ve done should remind others
               that they&apos;re{" "}
               <span className="font-semibold italic">worth more</span> than they think.
             </p>
-            <div className="mx-auto mt-8 hidden h-px w-[104px] lg:mx-0 lg:block">
+            <div className="mx-auto mt-8 hidden h-px w-26 lg:mx-0 lg:block">
               <Image
                 src={ASSETS.narrativeLine}
                 alt=""
@@ -422,7 +420,7 @@ export default function PortfolioProjects() {
 
       {/* Categories — Figma 362:935 */}
       <section
-        className="bg-ink px-6 py-16 md:px-12 md:pb-28 md:pt-[140px]"
+        className="bg-ink px-6 py-16 md:px-12 md:pb-28 md:pt-35"
         data-name="Content"
         data-node-id="362:935"
       >
@@ -432,7 +430,7 @@ export default function PortfolioProjects() {
           Categories
         </h2>
 
-        <div className="mx-auto flex max-w-[1008px] flex-col items-center gap-10">
+        <div className="mx-auto flex max-w-252 flex-col items-center gap-10">
           <div className="grid w-full grid-cols-1 justify-items-center gap-x-6 gap-y-10 md:grid-cols-3">
             <CategoryCard
               title="Speaking Events"
