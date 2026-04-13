@@ -45,7 +45,7 @@ export default function AchievementSection() {
                     </svg>
                 </div>
 
-                <div className="flex-5 relative">
+                <div className="flex-5 relative h-147.5">
                     <div className="absolute top-0 right-85">
                         <svg width="117" height="78" viewBox="0 0 117 78" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M77.5 67.5V48.5C77.5 42.9772 81.9771 38.5 87.5 38.5H106.5C112.023 38.5 116.5 34.0228 116.5 28.5V10.5C116.5 4.97715 112.023 0.5 106.5 0.5H48.5C42.9772 0.5 38.5 4.97715 38.5 10.5V28.5C38.5 34.0228 34.0228 38.5 28.5 38.5H10.5C4.97715 38.5 0.5 42.9772 0.5 48.5V67.5C0.5 73.0229 4.97715 77.5 10.5 77.5H67.5C73.0229 77.5 77.5 73.0229 77.5 67.5Z" fill="var(--primitive-canvas)" stroke="var(--primitive-muted)" />
