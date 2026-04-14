@@ -41,7 +41,7 @@ export default function MyServiceSection() {
     ];
 
     return (
-        <div className="flex flex-col items-center justify-center bg-surface-tint py-21.5">
+        <section className="flex flex-col items-center justify-center bg-surface-tint py-21.5">
             <div className="flex flex-col items-center justify-center pb-13.75">
                 <h3 className="text-display font-semibold text-ink">
                     My Services
@@ -65,6 +65,6 @@ export default function MyServiceSection() {
                     View All Services
                 </h6>
             </div>
-        </div>
+        </section>
     );
 }

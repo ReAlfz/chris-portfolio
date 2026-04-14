@@ -18,7 +18,7 @@ export default function HomeSection() {
   ];
 
   return (
-    <div className="flex flex-col">
+    <section className="flex flex-col">
       <div className="flex flex-row justify-center">
         <div className="flex flex-col pr-10 pt-24">
           <h1 className="text-display font-semibold text-ink">
@@ -78,6 +78,6 @@ export default function HomeSection() {
           description={"professional industry\ncertifications and/or\ndesignations attained"}
         />
       </div>
-    </div>
+    </section>
   );
 }

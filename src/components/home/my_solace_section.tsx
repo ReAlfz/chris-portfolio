@@ -26,7 +26,7 @@ export default function MySolaceSection() {
     ];
 
     return (
-        <div className="flex flex-col justify-center items-center pt-20 pb-32.5 px-35">
+        <section className="flex flex-col justify-center items-center pt-20 pb-32.5 px-35">
             <div className="flex flex-col gap-5 justify-center items-center">
                 <h3 className={`text-black font-semibold text-[53px] ${archivo.className}`}>
                     My Solace
@@ -55,6 +55,6 @@ export default function MySolaceSection() {
                     );
                 })}
             </div>
-        </div>
+        </section>
     );
 }

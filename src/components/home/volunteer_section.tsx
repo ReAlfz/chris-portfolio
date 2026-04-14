@@ -7,7 +7,7 @@ const archivo = Archivo({
 })
 
 export default function VolunteerSection() {
-    return <div className="flex flex-col items-center justify-center bg-surface-muted py-31.25">
+    return <section className="flex flex-col items-center justify-center bg-surface-muted py-31.25">
         <div className="flex flex-col items-center justify-center gap-2.5 pb-11.5">
             <h3 className={`text-display font-semibold text-ink ${archivo.className}`}>
                 Volunteer Initiatives
@@ -22,5 +22,5 @@ export default function VolunteerSection() {
                 See All Initiatives
             </h6>
         </div>
-    </div>
+    </section>
 }

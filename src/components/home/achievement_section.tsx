@@ -9,7 +9,7 @@ const archivo = Archivo({
 
 export default function AchievementSection() {
     return (
-        <div className="flex flex-col pt-33.75 bg-surface-soft">
+        <section className="flex flex-col pt-33.75 bg-surface-soft">
             <div className="flex flex-row pt-12.5 flex-1 pr-11.5 pl-35">
                 <div className="flex-5 flex-col flex justify-start">
                     <h2 className={`text-7xl font-semibold text-ink ${archivo.className}`}>
@@ -171,6 +171,6 @@ export default function AchievementSection() {
                     </svg>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

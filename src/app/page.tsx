@@ -8,7 +8,7 @@ import InTouch from "@/components/in_touch";
 
 export default function Home() {
   return (
-    <main className="flex flex-col bg-canvas">
+    <main className="min-h-screen bg-canvas flex flex-col">
       <HomeSection />
       <TedxSection />
       <MyServiceSection />
