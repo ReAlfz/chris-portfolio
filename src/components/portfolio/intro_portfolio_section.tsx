@@ -15,7 +15,7 @@ const archivo = Archivo({
     style: ["italic", "normal"],
 });
 
-export default function IntroSection() {
+export default function IntroPortfolioSection() {
     return (
         <section className="flex flex-col">
             <div className="relative overflow-hidden">

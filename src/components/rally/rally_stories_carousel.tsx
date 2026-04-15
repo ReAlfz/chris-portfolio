@@ -72,14 +72,14 @@ export default function RallyStoriesCarousel({
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-border-card py-16 md:min-h-[790px] md:py-24"
+      className="relative w-full overflow-hidden bg-border-card py-16 md:min-h-197.5 md:py-24"
       data-name="Clients"
       data-node-id="237:1612"
     >
-      <div className="mx-auto w-full max-w-[1440px] px-6 md:px-[144px]">
+      <div className="mx-auto w-full max-w-360 px-6 md:px-36">
         {/* Section title: “People” is brand green in Figma */}
         <h2
-          className={`max-w-[900px] text-[40px] font-semibold leading-[1.2] text-ink md:text-[53px] ${archivo.className}`}
+          className={`max-w-225 text-[40px] font-semibold leading-[1.2] text-ink md:text-[53px] ${archivo.className}`}
         >
           More Than Business—It&apos;s About{" "}
           <span className="text-brand">People</span>
@@ -95,7 +95,7 @@ export default function RallyStoriesCarousel({
           <button
             type="button"
             onClick={goPrev}
-            className="absolute left-0 top-1/2 z-10 hidden -translate-x-2 -translate-y-1/2 md:left-[-6px] md:block"
+            className="absolute left-0 top-1/2 z-10 hidden -translate-x-2 -translate-y-1/2 md:-left-1.5 md:block"
             aria-label="Previous story"
           >
             <Image src={arrowLeft} alt="" width={50} height={50} />
@@ -103,13 +103,13 @@ export default function RallyStoriesCarousel({
           <button
             type="button"
             onClick={goNext}
-            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-2 md:right-[-6px] md:block"
+            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-2 md:-right-1.5 md:block"
             aria-label="Next story"
           >
             <Image src={arrowRight} alt="" width={50} height={50} />
           </button>
 
-          <article className="mx-auto flex min-h-[440px] max-w-[1151px] flex-col gap-8 rounded-[10px] bg-surface-soft p-6 shadow-sm md:flex-row md:items-stretch md:p-10 lg:p-12">
+          <article className="mx-auto flex min-h-110 max-w-287.75 flex-col gap-8 rounded-[10px] bg-surface-soft p-6 shadow-sm md:flex-row md:items-stretch md:p-10 lg:p-12">
             <div className="flex flex-1 flex-col gap-5">
               <div>
                 <h3
@@ -130,7 +130,7 @@ export default function RallyStoriesCarousel({
                 {slide.industryValue}
               </p>
               <p
-                className={`max-w-[415px] text-base leading-[1.3] text-narrative ${archivo.className}`}
+                className={`max-w-103.75 text-base leading-[1.3] text-narrative ${archivo.className}`}
               >
                 {slide.body}
               </p>
@@ -179,7 +179,7 @@ export default function RallyStoriesCarousel({
             </div>
 
             <div className="flex shrink-0 flex-col gap-4 md:flex-row md:items-stretch">
-              <div className="relative h-[220px] w-full overflow-hidden rounded-md md:h-[300px] md:w-[412px]">
+              <div className="relative h-55 w-full overflow-hidden rounded-md md:h-75 md:w-103">
                 <Image
                   src={slide.mainImage}
                   alt=""
@@ -188,7 +188,7 @@ export default function RallyStoriesCarousel({
                   sizes="(max-width:768px) 100vw, 412px"
                 />
               </div>
-              <div className="relative mx-auto h-[200px] w-[140px] overflow-hidden rounded-md md:mx-0 md:h-[300px] md:w-[196px]">
+              <div className="relative mx-auto h-50 w-35 overflow-hidden rounded-md md:mx-0 md:h-75 md:w-49">
                 <Image
                   src={slide.sideImage}
                   alt=""
