@@ -13,20 +13,57 @@ const archivo = Archivo({
 });
 
 export default function CategorySection() {
+    const listCategoy = [
+        {
+            "title": "Speaking Events",
+            "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
+            "alt": "Speaking Events",
+            "image": speakEvent,
+        },
+        {
+            "title": "My TEDx Talk",
+            "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
+            "alt": "My TEDx Talk",
+            "image": tedTalk,
+        },
+        {
+            "title": "University Classes",
+            "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
+            "alt": "University Classes",
+            "image": uniClass,
+        },
+        {
+            "title": "Rally the Locals",
+            "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
+            "alt": "Rally the Locals",
+            "image": rallyLocal,
+        },
+        {
+            "title": "Agile Workshops",
+            "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
+            "alt": "Agile Workshops",
+            "image": agileWork,
+        },
+    ];
     return (
-        <section
-            className="bg-ink px-6 py-16 md:px-12 md:pb-28 md:pt-35"
-            data-name="Content"
-            data-node-id="362:935"
-        >
-            <h2
-                className={`mb-16 text-center text-display font-semibold leading-[1.2] text-on-brand ${archivo.className}`}
-            >
+        <section className="bg-ink px-6 py-16 md:px-12 md:pb-28 md:pt-35">
+            <h2 className={`mb-16 text-center text-display font-semibold leading-[1.2] text-on-brand ${archivo.className}`}>
                 Categories
             </h2>
 
-            <div className="mx-auto flex max-w-252 flex-col items-center gap-10">
-                <div className="grid w-full grid-cols-1 justify-items-center gap-x-6 gap-y-10 md:grid-cols-3">
+            <div className="grid grid-cols-3 gap-6 px-54">
+                {listCategoy.map((item, index) => {
+                    return (
+                        <CategoryCard
+                            key={index}
+                            title={item.title}
+                            imageSrc={item.image}
+                            alt={item.alt}
+                            description={item.description}
+                        />
+                    );
+                })}
+                {/* <div className="grid w-full grid-cols-1 justify-items-center gap-x-6 gap-y-10 md:grid-cols-3">
                     <CategoryCard
                         title="Speaking Events"
                         imageSrc={speakEvent}
@@ -62,7 +99,7 @@ export default function CategorySection() {
                         imageHeight={458}
                         alt="Agile workshops"
                     />
-                </div>
+                </div> */}
             </div>
         </section>
     );
