@@ -6,6 +6,7 @@ import coachingBasket from "../../../../public/images/home/coaching_basket.jpg";
 import bigBrotherWinnipeg from "../../../../public/images/home/big_brother_winnipeg.jpg";
 import { useState } from "react";
 import { Archivo } from "next/font/google";
+import { motion, AnimatePresence } from "framer-motion";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -13,46 +14,59 @@ const archivo = Archivo({
 });
 
 interface CorouselVolenteerProps {
+  id: number,
   title: string;
   description: string;
   image: StaticImageData;
 }
 
-const items: CorouselVolenteerProps[] = [
+const listItems: CorouselVolenteerProps[] = [
   {
+    id: 0,
     title: "Junior Achievement",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     image: juniorAchievment,
   },
   {
+    id: 1,
     title: "Coaching Basketball",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
     image: coachingBasket,
   },
   {
+    id: 2,
     title: "Big Brothers Big Sisters of Winnipeg",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     image: bigBrotherWinnipeg,
   },
 ];
 
-export default function CarouselVolenteer() {
-  const [current, setCurrent] = useState(1);
-  const totals = items.length;
+const variants = {
+  enter: (dir: number) => ({ x: dir > 0 ? 80 : -80, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (dir: number) => ({ x: dir > 0 ? -80 : 80, opacity: 0 }),
+};
 
-  const move = (dir: number) => {
-    setCurrent((prev) => (prev + dir + totals) % totals);
+export default function CarouselVolenteer() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const total = listItems.length;
+
+  const navigate = (dir: 1 | -1) => {
+    setDirection(dir);
+    setCurrent((prev) => (prev + dir + total) % total);
   };
 
-  const getIndex = (offset: number) => (current + offset + totals) % totals;
+  const getItem = (offset: number) =>
+    listItems[(current + offset + total) % total];
 
   return (
     <div className="flex w-full items-center justify-center overflow-hidden px-15 py-8">
       <button
         type="button"
         className="flex h-12.5 w-12.5 items-center justify-center rounded-full bg-surface p-3 text-ink"
-        onClick={() => move(-1)}
+        onClick={() => navigate(-1)}
         aria-label="Previous slide"
       >
         <svg
@@ -72,59 +86,86 @@ export default function CarouselVolenteer() {
         </svg>
       </button>
 
-      <div className="flex h-130.5 w-full items-start gap-5.75 px-12">
-        {[-1, 0, 1].map((offset) => {
-          const index = getIndex(offset);
-          const item = items[index];
-          const isActive = offset === 0;
+      <div className="flex flex-row h-130.5 w-full justify-center items-stretch gap-3 px-8">
+        {/* Left card */}
+        <div className="flex-2 flex flex-col shrink-0 bg-white overflow-hidden border border-gray-100 opacity-60 h-full">
+          <div className="relative w-full flex-1">
+            <Image
+              src={getItem(-1).image}
+              alt={getItem(-1).title}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="px-9 py-8 text-center shrink-0 min-h-33.75">
+            <h3 className={`text-2xl font-semibold text-[#101920] ${archivo.className}`}>
+              {getItem(-1).title}
+            </h3>
+          </div>
+        </div>
 
-          return (
-            <div
-              key={item.title}
-              className="h-full"
-              style={{
-                flex: isActive ? "2 1 0%" : "0 0 260px",
-                transition: "flex 0.4s ease, opacity 0.4s ease",
-                opacity: isActive ? 1 : 0.8,
-              }}
+        {/* Center card */}
+        <div className="shrink-0 flex-5 h-full">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={current}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.28, ease: "easeInOut" }}
+              className="bg-white h-full w-full flex flex-col border border-gray-100"
             >
-              <div className="overflow-hidden rounded-sm border border-border-card">
-                <div className={`relative w-full ${isActive ? "h-75" : "h-100"}`}>
-                  <Image src={item.image} alt={item.title} fill className="object-cover" />
-                </div>
-
-                <div className="flex flex-col items-center justify-center pb-8 pt-5.25">
-                  <h5
-                    className={`text-center font-semibold text-ink ${isActive ? "text-3xl" : "text-2xl"} ${archivo.className}`}
-                  >
-                    {item.title}
-                  </h5>
-
-                  {isActive && (
-                    <>
-                      <span
-                        className={`pt-3 text-center text-lg font-normal text-subtle transition-none ${archivo.className}`}
-                      >
-                        {item.description}
-                      </span>
-                      <span
-                        className={`pt-7 text-center text-lg font-normal text-subtle ${archivo.className}`}
-                      >
-                        Read more
-                      </span>
-                    </>
-                  )}
-                </div>
+              <div className="relative w-full flex-1">
+                <Image
+                  src={getItem(0).image}
+                  alt={getItem(0).title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </div>
-          );
-        })}
+              <div className="px-10.5 py-7 gap-3 flex flex-col text-center shrink-0">
+                <h5 className={`text-3xl text-[#101920] font-semibold ${archivo.className}`}>
+                  {getItem(0).title}
+                </h5>
+                {getItem(0).description && (
+                  <p className={`text-[18px] text-[#6A7282] font-normal ${archivo.className}`}>
+                    {getItem(0).description}
+                  </p>
+                )}
+                {getItem(0).description && (
+                  <button className={`mt-4 text-[18px] text-gray-500 hover:text-gray-600 transition-colors ${archivo.className}`}>
+                    Read more
+                  </button>
+                )}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Right card */}
+        <div className="flex-2 flex flex-col shrink-0 bg-white overflow-hidden border border-gray-100 opacity-60 h-full">
+          <div className="relative w-full flex-1">
+            <Image
+              src={getItem(1).image}
+              alt={getItem(1).title}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="px-9 py-8 text-center shrink-0 min-h-33.75">
+            <h6 className={`text-2xl font-semibold text-[#101920] ${archivo.className}`}>
+              {getItem(1).title}
+            </h6>
+          </div>
+        </div>
       </div>
 
       <button
         type="button"
         className="flex h-12.5 w-12.5 items-center justify-center rounded-full bg-surface p-3 text-ink"
-        onClick={() => move(+1)}
+        onClick={() => navigate(1)}
         aria-label="Next slide"
       >
         <svg

@@ -5,11 +5,9 @@
  */
 
 import type { Metadata } from "next";
-import RallyTheLocalsPage from "@/components/rally/rally_the_locals_page";
 import IntroRallySection from "@/components/rally/intro_rally_section";
 import CoreValueSection from "@/components/rally/core_value_section";
 import ServiceSection from "@/components/rally/service_section";
-import RallyStoriesCarousel from "@/components/rally/rally_stories_carousel";
 import BusinesssSection from "@/components/rally/business_section";
 import LocalComunitySection from "@/components/rally/local_comunity_section";
 import JoinRallySection from "@/components/rally/join_rally_section";
@@ -29,7 +27,6 @@ export default function RallyTheLocalRoute() {
       <BusinesssSection />
       <LocalComunitySection />
       <JoinRallySection />
-      {/* <RallyTheLocalsPage /> */}
     </main>
   );
 }

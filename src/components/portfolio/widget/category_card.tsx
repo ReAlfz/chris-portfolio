@@ -23,7 +23,7 @@ export default function CategoryCard({ title, imageSrc, alt, description, link }
                 src={imageSrc}
                 alt={alt}
             />
-            <div className="absolute bg-[#1E2939] inset-x-0 bottom-0 flex flex-col gap-3 justify-center items-center rounded-b-[20px] px-8 py-4">
+            <div className="absolute bg-[#1E2939] group-hover:bg-[#364153] inset-x-0 bottom-0 flex flex-col gap-3 justify-center items-center rounded-b-[20px] px-8 py-4">
                 <h6 className={`text-2xl font-semibold text-[#FAFAFA] ${archivo.className}`}>
                     {title}
                 </h6>

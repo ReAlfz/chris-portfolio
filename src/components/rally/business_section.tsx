@@ -13,8 +13,16 @@ const archivo = Archivo({
     style: ["italic", "normal"],
 });
 
+const variants = {
+    enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 60 : -60 }),
+    center: { opacity: 1, x: 0 },
+    exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -60 : 60 }),
+};
+
 export default function BusinesssSection() {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [direction, setDirection] = useState(0);
+
     const listStory = [
         {
             title: "Wooden Gate Cider | Manitoba Cidery",
@@ -48,7 +56,13 @@ export default function BusinesssSection() {
         },
     ];
 
+    const navigate = (dir: 1 | -1) => {
+        setDirection(dir);
+        setActiveIndex((prev) => (prev + dir + listStory.length) % listStory.length);
+    };
+
     const currentItem = listStory[activeIndex];
+
     return (
         <section className="bg-[#E5E7EB] flex flex-col px-16 py-25">
             <div className="flex flex-col gap-4 justify-start items-start px-20">
@@ -65,19 +79,21 @@ export default function BusinesssSection() {
             <div className="pt-9 flex flex-row gap-7 items-center">
                 <button
                     className="flex bg-[#FAFAFA] rounded-full p-3 justify-center items-center w-12.5 h-12.5"
-                    onClick={() => setActiveIndex((prev) => prev === 0 ? listStory.length - 1 : prev - 1)}>
+                    onClick={() => navigate(-1)}>
                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 25L8.75 15L18.75 5L21.25 7.5L13.75 15L21.25 22.5L18.75 25Z" fill="#101920" />
                     </svg>
                 </button>
 
 
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="wait" custom={direction}>
                     <motion.article
                         key={currentItem.title}
-                        initial={{ opacity: 0, x: 60 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -60 }}
+                        custom={direction}
+                        variants={variants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="flex flex-row w-full">
                         <div className="flex-1 flex flex-row bg-[#FAFAFA] rounded-[10px] py-12.5 pl-12.5">
@@ -141,7 +157,7 @@ export default function BusinesssSection() {
 
                 <button
                     className="flex bg-[#FAFAFA] rounded-full p-3 justify-center items-center w-12.5 h-12.5"
-                    onClick={() => setActiveIndex((prev) => (prev + 1) % listStory.length)}>
+                    onClick={() => navigate(1)}>
                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 5L21.25 15L11.25 25L8.75 22.5L16.25 15L8.75 7.5L11.25 5Z" fill="#101920" />
                     </svg>
