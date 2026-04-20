@@ -16,8 +16,8 @@ interface categoryProps {
 }
 
 export default function CategoryCard({ title, imageSrc, alt, description, link }: categoryProps) {
-    return (
-        <div className="group relative h-132.5 rounded-[20px]">
+    const inner = (
+        <>
             <Image
                 className="absolute rounded-[20px] h-full w-full object-cover"
                 src={imageSrc}
@@ -33,6 +33,20 @@ export default function CategoryCard({ title, imageSrc, alt, description, link }
                     </span>
                 </div>
             </div>
+        </>
+    );
+
+    if (link) {
+        return (
+            <Link href={link} className="group relative block h-132.5 rounded-[20px] outline-offset-4 focus-visible:outline-2 focus-visible:outline-brand">
+                {inner}
+            </Link>
+        );
+    }
+
+    return (
+        <div className="group relative h-132.5 rounded-[20px]">
+            {inner}
         </div>
     );
 }
