@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import IntroRallySection from "@/components/rally/intro_rally_section";
-import CoreValueSection from "@/components/rally/core_value_section";
-import ServiceSection from "@/components/rally/service_section";
-import BusinesssSection from "@/components/rally/business_section";
-import LocalComunitySection from "@/components/rally/local_comunity_section";
-import JoinRallySection from "@/components/rally/join_rally_section";
+import IntroRallySection from "@/components/rally-the-local/intro_rally_section";
+import CoreValueSection from "@/components/rally-the-local/core_value_section";
+import ServiceSection from "@/components/rally-the-local/service_section";
+import BusinesssSection from "@/components/rally-the-local/business_section";
+import LocalComunitySection from "@/components/rally-the-local/local_comunity_section";
+import JoinRallySection from "@/components/rally-the-local/join_rally_section";
 
 export const metadata: Metadata = {
   title: "Rally The Locals | Chris Hoquis",

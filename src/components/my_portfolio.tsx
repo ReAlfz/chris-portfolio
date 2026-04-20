@@ -25,22 +25,27 @@ const variants = {
 const listCategory = [
     {
         "title": "Speaking Events",
+        "href": "/speaking-event",
         "image": speakingImg,
     },
     {
         "title": "My TEDx Talk",
+        "href": "/tedx-talk",
         "image": tedxImg,
     },
     {
         "title": "University Classes",
+        "href": "/university-class",
         "image": uniClassImg,
     },
     {
         "title": "Rally the Locals",
+        "href": "/rally-the-local",
         "image": rallyImg,
     },
     {
         "title": "Agile Workshops",
+        "href": "/agile-workshop",
         "image": agileImg,
     },
 ];

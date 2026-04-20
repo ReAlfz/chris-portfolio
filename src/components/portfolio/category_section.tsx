@@ -18,30 +18,35 @@ export default function CategorySection() {
             "title": "Speaking Events",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
             "alt": "Speaking Events",
+            "href": "/speaking-event",
             "image": speakEvent,
         },
         {
             "title": "My TEDx Talk",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
             "alt": "My TEDx Talk",
+            "href": "/tedx-talk",
             "image": tedTalk,
         },
         {
             "title": "University Classes",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
             "alt": "University Classes",
+            "href": "/university-class",
             "image": uniClass,
         },
         {
             "title": "Rally the Locals",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
             "alt": "Rally the Locals",
+            "href": "/rally-the-local",
             "image": rallyLocal,
         },
         {
             "title": "Agile Workshops",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
             "alt": "Agile Workshops",
+            "href": "/agile-workshop",
             "image": agileWork,
         },
     ];
@@ -60,6 +65,7 @@ export default function CategorySection() {
                             imageSrc={item.image}
                             alt={item.alt}
                             description={item.description}
+                            link={item.href}
                         />
                     );
                 })}
