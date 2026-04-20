@@ -1,3 +1,4 @@
+import type { StaticImageData } from "next/image";
 import CategoryCard from "./widget/category_card";
 import speakEvent from "./../../../public/images/portfolio/speaking_event.png";
 import tedTalk from "./../../../public/images/portfolio/tedx_talk.jpg";
@@ -12,8 +13,16 @@ const archivo = Archivo({
     style: ["italic", "normal"],
 });
 
+type CategoryEntry = {
+    title: string;
+    description: string;
+    alt: string;
+    image: StaticImageData;
+    link?: string;
+};
+
 export default function CategorySection() {
-    const listCategoy = [
+    const listCategoy: CategoryEntry[] = [
         {
             "title": "Speaking Events",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
@@ -48,6 +57,7 @@ export default function CategorySection() {
             "alt": "Agile Workshops",
             "href": "/agile-workshop",
             "image": agileWork,
+            "link": "/portfolio/agile-workshops",
         },
     ];
     return (
