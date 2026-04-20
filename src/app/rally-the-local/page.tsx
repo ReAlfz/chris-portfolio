@@ -1,9 +1,3 @@
-/**
- * Rally The Locals — dedicated landing page for the RTL brand/work.
- * Figma: node 99-1876 in Chris Hoquis Portfolio (Copy).
- * Header + footer come from the root layout; this file only mounts page body content.
- */
-
 import type { Metadata } from "next";
 import IntroRallySection from "@/components/rally/intro_rally_section";
 import CoreValueSection from "@/components/rally/core_value_section";

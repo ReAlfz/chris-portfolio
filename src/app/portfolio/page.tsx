@@ -1,4 +1,3 @@
-/** My Portfolio — composes the large `PortfolioProjects` section stack. */
 import InTouch from "@/components/in_touch";
 import CategorySection from "@/components/portfolio/category_section";
 import IntroPortfolioSection from "@/components/portfolio/intro_portfolio_section";

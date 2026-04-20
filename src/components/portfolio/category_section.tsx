@@ -63,43 +63,6 @@ export default function CategorySection() {
                         />
                     );
                 })}
-                {/* <div className="grid w-full grid-cols-1 justify-items-center gap-x-6 gap-y-10 md:grid-cols-3">
-                    <CategoryCard
-                        title="Speaking Events"
-                        imageSrc={speakEvent}
-                        imageHeight={463}
-                        alt="Speaking events"
-                        expanded
-                        description={`I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.`}
-                    />
-                    <CategoryCard
-                        title="My TEDx Talk"
-                        imageSrc={tedTalk}
-                        imageHeight={463}
-                        alt="TEDx talk"
-                    />
-                    <CategoryCard
-                        title="University Classes"
-                        imageSrc={uniClass}
-                        imageHeight={463}
-                        alt="University classes"
-                    />
-                </div>
-                <div className="flex w-full flex-wrap justify-center gap-x-6 gap-y-10">
-                    <CategoryCard
-                        title="Rally the Locals"
-                        imageSrc={rallyLocal}
-                        imageHeight={458}
-                        alt="Rally the Locals"
-                        href="/rally-the-local"
-                    />
-                    <CategoryCard
-                        title="Agile Workshops"
-                        imageSrc={agileWork}
-                        imageHeight={458}
-                        alt="Agile workshops"
-                    />
-                </div> */}
             </div>
         </section>
     );

@@ -1,9 +1,3 @@
-/**
- * Site-wide navigation. Links are plain Next routes; “Contact Me” jumps to the footer
- * `#contact` anchor. Tweak `NAV_ITEMS` when you add or rename pages.
- */
-"use client";
-
 import Image from "next/image";
 import logoImg from "../../public/images/header_and_footer/Logo.png";
 import NavLink from "@/components/ui/nav-link";
