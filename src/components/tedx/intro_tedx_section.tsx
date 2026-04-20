@@ -18,7 +18,7 @@ export default function IntroTedxSection() {
                     alt="tedx-talk"
                 />
 
-                <div className="bg-[#F0FDF4]/50 opacity-25 z-2 w-full h-full absolute" />
+                <div className="bg-linear-to-r from-black/70 via-30% via-[#FAFAFA]/20 to-[#FAFAFA]/10 z-2 w-full h-full absolute" />
             </div>
             <div className="absolute inset-y-0 left-36 flex flex-col z-3 justify-center">
                 <div className="flex flex-col gap-6">
@@ -42,6 +42,28 @@ export default function IntroTedxSection() {
                         </svg>
                         {" My TEDx Talk"}
                     </h6>
+                </div>
+                <div className="flex flex-col pt-16.5">
+                    <h3 className={`text-[53px]/15 text-ted font-semibold  ${archivo.className}`}>
+                        Unlock Resiliency
+                    </h3>
+                    <h3 className={`text-[53px]/15 font-semibold text-on-ink ${archivo.className} whitespace-pre-line`}>
+                        {"with Relentless\nEmpathy"}
+                    </h3>
+                </div>
+                <h6 className={`pt-8 text-2xl font-normal leading-relaxed whitespace-pre-line text-on-ink ${archivo.className}`}>
+                    In one of the hardest moments of my life, I{"\n"}
+                    share intimate details of my struggles finding {"\n"}
+                    a sense of{" "}
+                    <span className="font-bold italic">self-worth</span>, and
+                    reminding others {"\n"} how{" "}
+                    <span className="font-bold italic">resilient</span>
+                    {" "}they truly are.
+                </h6>
+                <div className="mt-8.5 flex w-fit items-center justify-center bg-surface px-20 py-4">
+                    <span className={`text-2xl font-semibold text-neutral-dark ${archivo.className}`}>
+                        Read More
+                    </span>
                 </div>
             </div>
         </section>
