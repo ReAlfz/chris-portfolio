@@ -18,7 +18,7 @@ type CategoryEntry = {
     description: string;
     alt: string;
     image: StaticImageData;
-    link?: string;
+    href: string;
 };
 
 export default function CategorySection() {
@@ -57,7 +57,6 @@ export default function CategorySection() {
             "alt": "Agile Workshops",
             "href": "/agile-workshop",
             "image": agileWork,
-            "link": "/portfolio/agile-workshops",
         },
     ];
     return (
