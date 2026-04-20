@@ -9,6 +9,7 @@ import agileImg from "../../public/images/portfolio/agile_workshop.png";
 import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 const archivo = Archivo({
     variable: "--font-archivo",
@@ -114,55 +115,61 @@ export default function MyPortfolio({ isCompact }: { isCompact: boolean }) {
                     <div className="flex-3 flex overflow-hidden">
                         <div className="flex flex-row gap-6 items-end">
                             <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={current}
-                                    custom={direction}
-                                    variants={variants}
-                                    initial="enter"
-                                    animate="center"
-                                    className={`w-84 h-145 relative`}>
-                                    <Image
-                                        className={`absolute object-cover w-fit h-full z-2 right-1 bottom-1`}
-                                        src={getItem(0).image}
-                                        alt={getItem(0).title}
-                                    />
+                                <Link href={getItem(0).href} className="cursor-pointer">
+                                    <motion.div
+                                        key={current}
+                                        custom={direction}
+                                        variants={variants}
+                                        initial="enter"
+                                        animate="center"
+                                        className={`w-84 h-145 relative`}>
+                                        <Image
+                                            className={`absolute object-cover w-fit h-full z-2 right-1 bottom-1`}
+                                            src={getItem(0).image}
+                                            alt={getItem(0).title}
+                                        />
 
-                                    <div className={`z-3 bg-[#1C1C28B2] w-full absolute bottom-1 right-1 px-10.5 py-5 flex justify-center`}>
-                                        <span className={`text-3xl text-center font-medium ${archivo.className} text-[#FAFAFA]`}>
-                                            {getItem(0).title}
-                                        </span>
+                                        <div className={`z-3 bg-[#1C1C28B2] w-full absolute bottom-1 right-1 px-10.5 py-5 flex justify-center`}>
+                                            <span className={`text-3xl text-center font-medium ${archivo.className} text-[#FAFAFA]`}>
+                                                {getItem(0).title}
+                                            </span>
+                                        </div>
+
+                                        <div className="absolute right-0 bottom-0 w-full h-full bg-brand z-1" />
+                                    </motion.div>
+                                </Link>
+
+                                <Link href={getItem(1).href} className="cursor-pointer">
+                                    <div className="relative w-72.5 h-132.5">
+                                        <Image
+                                            className={`absolute object-cover w-fit h-full z-2`}
+                                            src={getItem(1).image}
+                                            alt={getItem(1).title}
+                                        />
+
+                                        <div className={`z-3 bg-[#1C1C28B2] absolute inset-0 items-center justify-center flex`}>
+                                            <span className={`text-3xl font-medium ${archivo.className} text-[#FAFAFA]`}>
+                                                {getItem(1).title}
+                                            </span>
+                                        </div>
                                     </div>
+                                </Link>
 
-                                    <div className="absolute right-0 bottom-0 w-full h-full bg-brand z-1" />
-                                </motion.div>
+                                <Link href={getItem(2).href} className="cursor-pointer">
+                                    <div className="relative w-72.5 h-132.5">
+                                        <Image
+                                            className={`absolute object-cover w-fit h-full z-2`}
+                                            src={getItem(2).image}
+                                            alt={getItem(2).title}
+                                        />
 
-                                <div className="relative w-72.5 h-132.5">
-                                    <Image
-                                        className={`absolute object-cover w-fit h-full z-2`}
-                                        src={getItem(1).image}
-                                        alt={getItem(1).title}
-                                    />
-
-                                    <div className={`z-3 bg-[#1C1C28B2] absolute inset-0 items-center justify-center flex`}>
-                                        <span className={`text-3xl font-medium ${archivo.className} text-[#FAFAFA]`}>
-                                            {getItem(1).title}
-                                        </span>
+                                        <div className={`z-3 bg-[#1C1C28B2] absolute inset-0 items-center justify-center flex`}>
+                                            <span className={`text-3xl font-medium ${archivo.className} text-[#FAFAFA]`}>
+                                                {getItem(2).title}
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div className="relative w-72.5 h-132.5">
-                                    <Image
-                                        className={`absolute object-cover w-fit h-full z-2`}
-                                        src={getItem(2).image}
-                                        alt={getItem(2).title}
-                                    />
-
-                                    <div className={`z-3 bg-[#1C1C28B2] absolute inset-0 items-center justify-center flex`}>
-                                        <span className={`text-3xl font-medium ${archivo.className} text-[#FAFAFA]`}>
-                                            {getItem(2).title}
-                                        </span>
-                                    </div>
-                                </div>
+                                </Link>
                             </AnimatePresence>
                         </div>
                     </div>
@@ -230,69 +237,77 @@ export default function MyPortfolio({ isCompact }: { isCompact: boolean }) {
                 <div className="flex-3 flex justify-center overflow-hidden">
                     <div className="flex flex-row gap-6 items-end">
                         <AnimatePresence mode="wait">
-                            <motion.div
-                                key={current}
-                                custom={direction}
-                                variants={variants}
-                                initial="enter"
-                                animate="center"
-                                className={`w-84 h-145 relative`}>
-                                <Image
-                                    className={`absolute object-cover w-fit h-full z-2 right-1 bottom-1`}
-                                    src={getItem(0).image}
-                                    alt={getItem(0).title}
-                                />
+                            <Link href={getItem(0).href} className="cursor-pointer">
+                                <motion.div
+                                    key={current}
+                                    custom={direction}
+                                    variants={variants}
+                                    initial="enter"
+                                    animate="center"
+                                    className={`w-84 h-145 relative`}>
+                                    <Image
+                                        className={`absolute object-cover w-fit h-full z-2 right-1 bottom-1`}
+                                        src={getItem(0).image}
+                                        alt={getItem(0).title}
+                                    />
 
-                                <div className={`z-3 bg-[#1C1C28B2] w-full absolute bottom-1 right-1 px-10.5 py-5 flex justify-center`}>
-                                    <span className={`text-3xl text-center font-medium ${archivo.className} text-[#FAFAFA]`}>
-                                        {getItem(0).title}
-                                    </span>
+                                    <div className={`z-3 bg-[#1C1C28B2] w-full absolute bottom-1 right-1 px-10.5 py-5 flex justify-center`}>
+                                        <span className={`text-3xl text-center font-medium ${archivo.className} text-[#FAFAFA]`}>
+                                            {getItem(0).title}
+                                        </span>
+                                    </div>
+
+                                    <div className="absolute right-0 bottom-0 w-full h-full bg-brand z-1" />
+                                </motion.div>
+                            </Link>
+
+                            <Link href={getItem(1).href} className="cursor-pointer">
+                                <div className="relative w-72.5 h-132.5">
+                                    <Image
+                                        className={`absolute object-cover w-fit h-full z-2`}
+                                        src={getItem(1).image}
+                                        alt={getItem(1).title}
+                                    />
+
+                                    <div className={`z-3 bg-[#1C1C28B2] absolute inset-0 items-center justify-center flex`}>
+                                        <span className={`text-3xl font-medium ${archivo.className} text-[#FAFAFA]`}>
+                                            {getItem(1).title}
+                                        </span>
+                                    </div>
                                 </div>
+                            </Link>
 
-                                <div className="absolute right-0 bottom-0 w-full h-full bg-brand z-1" />
-                            </motion.div>
+                            <Link href={getItem(2).href} className="cursor-pointer">
+                                <div className="relative w-72.5 h-132.5">
+                                    <Image
+                                        className={`absolute object-cover w-fit h-full z-2`}
+                                        src={getItem(2).image}
+                                        alt={getItem(2).title}
+                                    />
 
-                            <div className="relative w-72.5 h-132.5">
-                                <Image
-                                    className={`absolute object-cover w-fit h-full z-2`}
-                                    src={getItem(1).image}
-                                    alt={getItem(1).title}
-                                />
-
-                                <div className={`z-3 bg-[#1C1C28B2] absolute inset-0 items-center justify-center flex`}>
-                                    <span className={`text-3xl font-medium ${archivo.className} text-[#FAFAFA]`}>
-                                        {getItem(1).title}
-                                    </span>
+                                    <div className={`z-3 bg-[#1C1C28B2] absolute inset-0 items-center justify-center flex`}>
+                                        <span className={`text-3xl font-medium ${archivo.className} text-[#FAFAFA]`}>
+                                            {getItem(2).title}
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
 
-                            <div className="relative w-72.5 h-132.5">
-                                <Image
-                                    className={`absolute object-cover w-fit h-full z-2`}
-                                    src={getItem(2).image}
-                                    alt={getItem(2).title}
-                                />
+                            <Link href={getItem(3).href} className="cursor-pointer">
+                                <div className="relative w-72.5 h-132.5">
+                                    <Image
+                                        className={`absolute object-cover w-fit h-full z-2`}
+                                        src={getItem(3).image}
+                                        alt={getItem(3).title}
+                                    />
 
-                                <div className={`z-3 bg-[#1C1C28B2] absolute inset-0 items-center justify-center flex`}>
-                                    <span className={`text-3xl font-medium ${archivo.className} text-[#FAFAFA]`}>
-                                        {getItem(2).title}
-                                    </span>
+                                    <div className={`z-3 bg-[#1C1C28B2] absolute inset-0 items-center justify-center flex`}>
+                                        <span className={`text-3xl font-medium ${archivo.className} text-[#FAFAFA]`}>
+                                            {getItem(3).title}
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div className="relative w-72.5 h-132.5">
-                                <Image
-                                    className={`absolute object-cover w-fit h-full z-2`}
-                                    src={getItem(3).image}
-                                    alt={getItem(3).title}
-                                />
-
-                                <div className={`z-3 bg-[#1C1C28B2] absolute inset-0 items-center justify-center flex`}>
-                                    <span className={`text-3xl font-medium ${archivo.className} text-[#FAFAFA]`}>
-                                        {getItem(3).title}
-                                    </span>
-                                </div>
-                            </div>
+                            </Link>
                         </AnimatePresence>
                     </div>
                 </div>
