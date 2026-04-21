@@ -136,15 +136,15 @@ export default function IntroPortfolioSection() {
                     <div className="flex flex-col pl-24 gap-12">
                         <h2 className={`font-semibold text-[40px] text-[#6D7A8A] text-center ${archivoNarrow.className}`}>
                             When I look back at my life,<br />
-                            I don't want to give {" "}
+                            I{"don't"} want to give{" "}
                             <span className={`font-normal italic text-[40px] text-[#6D7A8A] ${archivoNarrow.className}`}>‘anything is possible’</span>
                             <br />cliché statements to try to motivate.
                         </h2>
                         <span className={`text-center text-[20px] text-[#6D7A8A] font-normal ${archivo.className}`}>
                             I want others to see that I came from sincere belief <br />
                             that I did not deserve to be alive. To come from that, <br />
-                            and accomplish what I've done should remind others <br />
-                            that they're{" "}
+                            and accomplish what{"I've"} done should remind others <br />
+                            that{"they're"}{" "}
                             <span className="font-semibold italic underline text-[20px]">worth more</span>
                             {" "}than they think.
                         </span>
