@@ -55,7 +55,7 @@ export default function CategorySection() {
             "title": "Agile Workshops",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
             "alt": "Agile Workshops",
-            "href": "/agile-workshop",
+            "href": "/portfolio/agile-workshops",
             "image": agileWork,
         },
     ];

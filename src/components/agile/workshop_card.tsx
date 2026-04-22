@@ -26,7 +26,7 @@ export default function WorkshopCard({
 }: WorkshopCardProps) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-[20px] border border-border-card bg-surface-soft shadow-sm">
-      <div className="relative aspect-[263/172] w-full shrink-0 overflow-hidden rounded-t-[20px]">
+      <div className="relative aspect-263/172 w-full shrink-0 overflow-hidden rounded-t-[20px]">
         <Image src={image} alt={title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 280px" />
         {featured ? (
           <div className="absolute inset-0 bg-ink/80 p-4">
