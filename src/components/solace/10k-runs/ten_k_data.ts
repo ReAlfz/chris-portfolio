@@ -1,71 +1,15 @@
 import type { StaticImageData } from "next/image";
-import runImg from "../../../public/images/home/run_solace.png";
-
-export type TimelineEntry = {
-  year: number;
-  side: "left" | "right";
-  title: string;
-  description: string;
-  time: string;
-  location: string;
-  image: StaticImageData;
-};
-
-export const TIMELINE_ENTRIES: TimelineEntry[] = [
-  {
-    year: 2020,
-    side: "left",
-    title: "Marathon for Mental Health",
-    description:
-      "Raised funds for mental health initiatives and ran alongside community partners to spread awareness and reduce stigma.",
-    time: "48:32",
-    location: "Toronto, Canada",
-    image: runImg,
-  },
-  {
-    year: 2021,
-    side: "right",
-    title: "Waterfront 10K",
-    description:
-      "Pushed for a new personal best on a flat course with thousands cheering along the lake—proof that training compounds.",
-    time: "48:42",
-    location: "Toronto, Canada",
-    image: runImg,
-  },
-  {
-    year: 2023,
-    side: "left",
-    title: "Spring Classic",
-    description:
-      "Returned after injury with a smarter training block and steadier negative splits through the middle miles.",
-    time: "55:32",
-    location: "Calgary, Canada",
-    image: runImg,
-  },
-  {
-    year: 2024,
-    side: "right",
-    title: "Community Charity Run",
-    description:
-      "Ran alongside colleagues to support local mental health programs—pace secondary to purpose and presence.",
-    time: "49:30",
-    location: "Winnipeg, Canada",
-    image: runImg,
-  },
-  {
-    year: 2025,
-    side: "left",
-    title: "City Loop 10K",
-    description:
-      "Fine-tuned fueling and cadence; chipped within seconds of a long-standing goal on a familiar hometown course.",
-    time: "46:32",
-    location: "Toronto, Canada",
-    image: runImg,
-  },
-];
+import marathon1 from "../../../../public/images/solace/marathon_1.png";
+import marathon2 from "../../../../public/images/solace/marathon_2.png";
+import marathon3 from "../../../../public/images/solace/marathon_3.png";
+import marathon4 from "../../../../public/images/solace/marathon_4.png";
+import futureRun1 from "../../../../public/images/solace/future_run_1.png";
+import futureRun2 from "../../../../public/images/solace/future_run_2.png";
+import futureRun3 from "../../../../public/images/solace/future_run_3.png";
+import futureRun4 from "../../../../public/images/solace/future_run_4.png";
 
 /** Table view — matches Figma “My Running Journey” table spec. */
-export type TableRow = {
+export type JourneyData = {
   id: string;
   placeRank: string;
   placeOf: string;
@@ -78,10 +22,12 @@ export type TableRow = {
   chipTime: string;
   chipDelta: string;
   officialTime: string;
-  detail?: string;
+  detail: string;
+  image: StaticImageData;
+  year: number,
 };
 
-export const TABLE_ROWS: TableRow[] = [
+export const RUN_JOURNEY: JourneyData[] = [
   {
     id: "toronto-waterfront",
     placeRank: "#142",
@@ -94,6 +40,8 @@ export const TABLE_ROWS: TableRow[] = [
     officialTime: "00:56:03",
     detail:
       "One of Canada's signature summer races, known for its flat lakeside course and huge community turnout. A fast route built for chasing personal bests.",
+    image: marathon1,
+    year: 2020,
   },
   {
     id: "sea-to-sky",
@@ -105,6 +53,10 @@ export const TABLE_ROWS: TableRow[] = [
     chipTime: "00:48:32",
     chipDelta: "+00:01:51",
     officialTime: "00:48:32",
+    detail:
+      "One of Canada's signature summer races, known for its flat lakeside course and huge community turnout. A fast route built for chasing personal bests.",
+    image: marathon2,
+    year: 2021,
   },
   {
     id: "prairie-pace",
@@ -116,6 +68,10 @@ export const TABLE_ROWS: TableRow[] = [
     chipTime: "00:48:32",
     chipDelta: "+00:01:51",
     officialTime: "00:48:32",
+    detail:
+      "One of Canada's signature summer races, known for its flat lakeside course and huge community turnout. A fast route built for chasing personal bests.",
+    image: marathon3,
+    year: 2022,
   },
   {
     id: "capital-run",
@@ -127,6 +83,10 @@ export const TABLE_ROWS: TableRow[] = [
     chipTime: "00:48:32",
     chipDelta: "+00:01:51",
     officialTime: "00:48:32",
+    detail:
+      "One of Canada's signature summer races, known for its flat lakeside course and huge community turnout. A fast route built for chasing personal bests.",
+    image: marathon4,
+    year: 2023,
   },
   {
     id: "maple-leaf",
@@ -138,6 +98,10 @@ export const TABLE_ROWS: TableRow[] = [
     chipTime: "00:48:32",
     chipDelta: "+00:01:51",
     officialTime: "00:48:32",
+    detail:
+      "One of Canada's signature summer races, known for its flat lakeside course and huge community turnout. A fast route built for chasing personal bests.",
+    image: marathon3,
+    year: 2024,
   },
   {
     id: "northern-lights",
@@ -149,6 +113,10 @@ export const TABLE_ROWS: TableRow[] = [
     chipTime: "00:48:32",
     chipDelta: "+00:01:51",
     officialTime: "00:48:32",
+    detail:
+      "One of Canada's signature summer races, known for its flat lakeside course and huge community turnout. A fast route built for chasing personal bests.",
+    image: marathon4,
+    year: 2025,
   },
 ];
 
@@ -162,21 +130,21 @@ export const FUTURE_RUNS: FutureRun[] = [
   {
     title: "Quebec City Marathon 10K",
     metaLine: "Quebec City, QC | September 21, 2025",
-    image: runImg,
+    image: futureRun1,
   },
   {
     title: "Calgary Marathon 10K",
     metaLine: "Calgary, AB | May 25, 2025",
-    image: runImg,
+    image: futureRun2,
   },
   {
     title: "Toronto Waterfront 10K",
     metaLine: "Toronto, ON | October 17, 2025",
-    image: runImg,
+    image: futureRun3,
   },
   {
     title: "Vancouver Sun Run",
     metaLine: "Vancouver, BC | April 21, 2025",
-    image: runImg,
+    image: futureRun3,
   },
 ];

@@ -11,9 +11,15 @@ type Props = {
 
 export default function SolaceHero({ title, image }: Props) {
   return (
-    <section className="relative flex min-h-[500px] w-full flex-col items-center justify-center overflow-hidden">
-      <Image src={image} alt="" fill className="object-cover" priority sizes="100vw" />
-      <div className="absolute inset-0 bg-[rgba(28,28,40,0.88)]" aria-hidden />
+    <section className="relative flex h-125 w-full flex-col items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 bg-[rgba(28,28,40,0.88)] z-2" aria-hidden />
+      <Image
+        src={image}
+        alt=""
+        className="object-cover absolute z-1 w-full h-full"
+        style={{ objectPosition: "center 70%" }}
+      />
+
       <div className="relative z-10 flex flex-col items-center gap-6 px-6 text-center">
         <h1 className={`text-[clamp(2.25rem,5vw,4.3125rem)] font-semibold leading-[1.2] text-on-ink ${archivo.className}`}>
           {title}

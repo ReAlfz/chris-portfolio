@@ -13,10 +13,10 @@ const LINKS: {
   href: string;
   image: StaticImageData;
 }[] = [
-  { id: "boxing", label: "Boxing", href: "/solace/boxing", image: boxingImg },
-  { id: "10k", label: "10k Runs", href: "/solace/10k-runs", image: runImg },
-  { id: "gokart", label: "Go Karting", href: "/solace/go-karting", image: kartImg },
-];
+    { id: "boxing", label: "Boxing", href: "/solace/boxing", image: boxingImg },
+    { id: "10k", label: "10k Runs", href: "/solace/10k-runs", image: runImg },
+    { id: "gokart", label: "Go Karting", href: "/solace/go-karting", image: kartImg },
+  ];
 
 type Current = "boxing" | "10k" | "gokart";
 
@@ -33,11 +33,10 @@ export default function SolaceMoreNav({ current }: { current: Current }) {
               <Link
                 key={item.id}
                 href={item.href}
-                className={`flex w-full max-w-[368px] flex-col overflow-hidden rounded-sm border bg-surface transition hover:border-brand md:w-[calc(33.333%-1rem)] ${
-                  isActive ? "border-brand ring-1 ring-brand" : "border-border"
-                }`}
+                className={`flex w-full max-w-92 flex-col overflow-hidden rounded-sm border bg-surface transition md:w-[calc(33.333%-1rem)] 
+                  ${isActive ? "border-border shadow-sm" : "border-border"}`}
               >
-                <div className="relative aspect-[368/428] w-full">
+                <div className="relative aspect-368/428 w-full">
                   <Image src={item.image} alt="" fill className="object-cover" sizes="(max-width:768px) 100vw, 368px" />
                 </div>
                 <div className="border-t border-border px-4 py-5 text-center">

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import SolaceHero from "@/components/solace/solace_hero";
-import BoxingWhySection from "@/components/solace/boxing_why_section";
-import BoxingStorySection from "@/components/solace/boxing_story_section";
+import BoxingStorySection from "@/components/solace/boxing/boxing_story_section";
 import SolaceMomentsSection from "@/components/solace/solace_moments_section";
 import SolaceMoreNav from "@/components/solace/solace_more_nav";
 import boxingImg from "../../../../public/images/home/boxing_solace.png";
 import runImg from "../../../../public/images/home/run_solace.png";
+import BoxingWhySection from "@/components/solace/boxing/boxing_why_section";
 
 export const metadata: Metadata = {
   title: "Boxing | My Solace | Chris Hoquis",
@@ -20,6 +20,14 @@ const BOXING_SLIDES = [
     imageMain: boxingImg,
     imageSide: runImg,
   },
+
+  {
+    title: "First Win in The Ring 2",
+    meta: "Toronto Boxing Club | March 12, 2015",
+    body: "A defining moment in my boxing journey. After weeks of training, I stepped into the ring and pushed through every round. It was not just about winning—it was about proving to myself that I belonged here.",
+    imageMain: boxingImg,
+    imageSide: runImg,
+  },
 ];
 
 export default function BoxingPage() {
@@ -28,7 +36,10 @@ export default function BoxingPage() {
       <SolaceHero title="Boxing" image={boxingImg} />
       <BoxingWhySection />
       <BoxingStorySection />
-      <SolaceMomentsSection heading="Boxing Moments" slides={BOXING_SLIDES} />
+      <SolaceMomentsSection
+        heading="Boxing Moments"
+        slides={BOXING_SLIDES}
+        useFuture={false} />
       <SolaceMoreNav current="boxing" />
     </main>
   );

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import SolaceHero from "@/components/solace/solace_hero";
-import GokartWhySection from "@/components/solace/gokart_why_section";
-import GokartStorySection from "@/components/solace/gokart_story_section";
 import SolaceMomentsSection from "@/components/solace/solace_moments_section";
 import SolaceMoreNav from "@/components/solace/solace_more_nav";
 import kartImg from "../../../../public/images/home/karting_solace.png";
 import boxingImg from "../../../../public/images/home/boxing_solace.png";
+import GokartWhySection from "@/components/solace/go-karting/gokart_why_section";
+import GokartStorySection from "@/components/solace/go-karting/gokart_story_section";
 
 export const metadata: Metadata = {
   title: "Go Karting | My Solace | Chris Hoquis",
@@ -28,7 +28,10 @@ export default function GoKartingPage() {
       <SolaceHero title="Go Karting" image={kartImg} />
       <GokartWhySection />
       <GokartStorySection />
-      <SolaceMomentsSection heading="Go-Karting Moments" slides={KART_SLIDES} />
+      <SolaceMomentsSection
+        heading="Go-Karting Moments"
+        slides={KART_SLIDES}
+        useFuture={false} />
       <SolaceMoreNav current="gokart" />
     </main>
   );
