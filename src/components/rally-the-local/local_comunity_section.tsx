@@ -1,5 +1,6 @@
 import { Archivo } from "next/font/google";
 import Image from "next/image";
+import gratefullBg from "../../../public/images/rally/gratefull_icon.jpg";
 import rallyImg1 from "../../../public/images/rally/rally-1.jpg";
 import rallyImg2 from "../../../public/images/rally/rally_bg.jpg";
 import rallyImg3 from "../../../public/images/rally/rally-2.jpg";
@@ -63,6 +64,29 @@ export default function LocalComunitySection() {
                             </div>
                         );
                     })}
+                </div>
+                <div className="mt-27.5 flex flex-col items-center gap-8">
+                    <h4 className={`text-[40px] text-black font-semibold ${archivo.className}`}>
+                        {"Grateful for Those Who "}
+                        <span className="text-brand">
+                            Rally
+                        </span>
+                        {" With Us"}
+                    </h4>
+                    <div className="bg-white rounded-2xl flex flex-col gap-2.5 px-10.5 py-16">
+                        {[1, 2, 3, 4, 5].map((item) => {
+                            return (
+                                <Image
+                                    className=""
+                                    src={gratefullBg}
+                                    alt={`image-${item}`}
+                                />
+                            );
+                        })}
+                    </div>
+                    <h6 className={`text-2xl font-semibold text-black ${archivo.className}`}>
+                        and more!
+                    </h6>
                 </div>
             </div>
         </section>

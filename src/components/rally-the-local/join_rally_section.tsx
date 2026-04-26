@@ -31,7 +31,7 @@ export default function JoinRallySection() {
             <div className="absolute grid grid-cols-5 w-full overflow-hidden">
                 {Array.from({ length: totalItems }).map((_, index) => {
                     return (
-                        <div key={index} className="relative w-80 h-48.75 z-1">
+                        <div key={index} className="relative w-full h-48.75 z-1">
                             <Image
                                 key={index}
                                 className="object-cover"

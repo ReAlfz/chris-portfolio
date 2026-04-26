@@ -38,7 +38,7 @@ const listCategory = [
     },
     {
         "title": "University Classes",
-        "href": "/university-class",
+        "href": "/portfolio/university-class",
         "image": uniClassImg,
     },
     {
@@ -48,7 +48,7 @@ const listCategory = [
     },
     {
         "title": "Agile Workshops",
-        "href": "/agile-workshop",
+        "href": "/portfolio/agile-workshop",
         "image": agileImg,
     },
 ];

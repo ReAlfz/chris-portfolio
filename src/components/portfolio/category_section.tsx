@@ -41,7 +41,7 @@ export default function CategorySection() {
             "title": "University Classes",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
             "alt": "University Classes",
-            "href": "/university-class",
+            "href": "/portfolio/university-class",
             "image": uniClass,
         },
         {
