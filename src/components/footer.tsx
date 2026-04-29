@@ -1,11 +1,15 @@
-/**
- * Global footer: logo, RTL submark, socials, and link columns. `id="contact"` is
- * what the header “Contact Me” button scrolls to.
- */
 import Image from "next/image";
 import logoImg from "../../public/images/header_and_footer/Logo.png";
 import rallyImg from "../../public/images/header_and_footer/rally_the_local.png";
 import Link from "next/link";
+
+const portfolio_item = [
+  { href: "/portfolio/speaking-events", label: "Speaking Events" },
+  { href: "/portfolio/tedx-talk", label: "My TEDx Talk" },
+  { href: "/portfolio/university-class", label: "University Classes" },
+  { href: "/portfolio/rally-the-local", label: "Rally the Locals" },
+  { href: "/portfolio/agile-workshops", label: "Agile Workshops" },
+];
 
 export default function Footer() {
   return (
@@ -78,28 +82,20 @@ export default function Footer() {
         <div className="flex flex-row gap-10">
           <div className="flex flex-col gap-2.25">
             <span className="pb-0.75 text-base font-semibold text-ink">My Portfolio</span>
-            <span className="text-base font-normal text-muted">
-              Speaking Events
-            </span>
-            <span className="text-base font-normal text-muted">
-              My TEDx Talk
-            </span>
-            <span className="text-base font-normal text-muted">
-              Speaking Events
-            </span>
-            <Link href="/portfolio/rally-the-local">
-              <span className="text-base font-normal text-muted">
-                Rally the Locals
-              </span>
-            </Link>
-            <Link href="/portfolio/agile-workshops">
-              <span className="text-base font-normal text-muted">
-                Agile Workshops
-              </span>
-            </Link>
+            {portfolio_item.map((item) => {
+              return (
+                <Link href={item.href}>
+                  <span className="text-base font-normal text-muted">
+                    {item.label}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
           <div className="flex flex-col gap-2.25">
-            <span className="pb-0.75 text-base font-semibold text-ink">My Services</span>
+            <span className="pb-0.75 text-base font-semibold text-ink">
+              My Services
+            </span>
             <span className="text-base font-normal text-muted">
               Keynotes and Speaking
               <br />

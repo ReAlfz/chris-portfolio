@@ -26,7 +26,7 @@ export default function IntroSpeakingSection() {
                     <h6 className={`text-2xl font-semibold text-[#FAFAFA] ${archivo.className}`}>
                         My Portfolio{" "}
                         <svg className="inline" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 4L17 12L9 20L7 18L13 12L7 6L9 4Z" fill="#FAFAFA" />
+                            <path fillRule="evenodd" clipRule="evenodd" d="M9 4L17 12L9 20L7 18L13 12L7 6L9 4Z" fill="#FAFAFA" />
                         </svg>
                         {" "}Speaking Events
                     </h6>

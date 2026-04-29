@@ -6,7 +6,7 @@ import Button from "@/components/ui/button";
 const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/portfolio", label: "My Portfolio" },
-  { href: "/service", label: "My Services" },
+  { href: "/my-services", label: "My Services" },
   { href: "/achievemnt", label: "Achievements" },
   { href: "/portfolio/tedx-talk", label: "TEDx Talk" },
   { href: "/portfolio/rally-the-local", label: "Rally the Locals" },

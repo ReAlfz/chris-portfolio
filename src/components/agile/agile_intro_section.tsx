@@ -29,7 +29,7 @@ export default function AgileIntroSection() {
                         Agile Workshops
                     </h2>
                     <div className="flex flex-row items-center justify-center">
-                        <h6 className={`text-2xl font-semibold text-[#99A1AF] ${archivo.className}`}>
+                        <h6 className={`text-2xl font-semibold text-[#FAFAFA] ${archivo.className}`}>
                             My Portfolio{" "}
                         </h6>
                         <svg className="inline" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
