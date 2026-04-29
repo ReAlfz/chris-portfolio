@@ -28,12 +28,12 @@ const variants = {
 const listCategory = [
     {
         "title": "Speaking Events",
-        "href": "/speaking-event",
+        "href": "/portfolio/speaking-events",
         "image": speakingImg,
     },
     {
         "title": "My TEDx Talk",
-        "href": "/tedx-talk",
+        "href": "/portfolio/tedx-talk",
         "image": tedxImg,
     },
     {
@@ -43,7 +43,7 @@ const listCategory = [
     },
     {
         "title": "Rally the Locals",
-        "href": "/rally-the-local",
+        "href": "/portfolio/rally-the-local",
         "image": rallyImg,
     },
     {

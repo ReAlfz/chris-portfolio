@@ -8,8 +8,8 @@ const NAV_ITEMS = [
   { href: "/portfolio", label: "My Portfolio" },
   { href: "/service", label: "My Services" },
   { href: "/achievemnt", label: "Achievements" },
-  { href: "/tedx-talk", label: "TEDx Talk" },
-  { href: "/rally-the-local", label: "Rally the Locals" },
+  { href: "/portfolio/tedx-talk", label: "TEDx Talk" },
+  { href: "/portfolio/rally-the-local", label: "Rally the Locals" },
   { href: "/volunteer", label: "Volunteer Initiatives" },
 ] as const;
 

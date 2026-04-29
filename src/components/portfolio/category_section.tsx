@@ -27,14 +27,14 @@ export default function CategorySection() {
             "title": "Speaking Events",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
             "alt": "Speaking Events",
-            "href": "/speaking-event",
+            "href": "/portfolio/speaking-events",
             "image": speakEvent,
         },
         {
             "title": "My TEDx Talk",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
             "alt": "My TEDx Talk",
-            "href": "/tedx-talk",
+            "href": "/portfolio/tedx-talk",
             "image": tedTalk,
         },
         {
@@ -48,7 +48,7 @@ export default function CategorySection() {
             "title": "Rally the Locals",
             "description": "I've had the opportunity to speak at conferences, panels, and workshops, sharing insights on business, technology, and career growth to help others navigate their own paths.",
             "alt": "Rally the Locals",
-            "href": "/rally-the-local",
+            "href": "/portfolio/rally-the-local",
             "image": rallyLocal,
         },
         {

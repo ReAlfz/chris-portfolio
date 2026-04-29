@@ -5,6 +5,7 @@
 import Image from "next/image";
 import logoImg from "../../public/images/header_and_footer/Logo.png";
 import rallyImg from "../../public/images/header_and_footer/rally_the_local.png";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -77,11 +78,25 @@ export default function Footer() {
         <div className="flex flex-row gap-10">
           <div className="flex flex-col gap-2.25">
             <span className="pb-0.75 text-base font-semibold text-ink">My Portfolio</span>
-            <span className="text-base font-normal text-muted">Speaking Events</span>
-            <span className="text-base font-normal text-muted">My TEDx Talk</span>
-            <span className="text-base font-normal text-muted">Speaking Events</span>
-            <span className="text-base font-normal text-muted">Rally the Locals</span>
-            <span className="text-base font-normal text-muted">Agile Workshops</span>
+            <span className="text-base font-normal text-muted">
+              Speaking Events
+            </span>
+            <span className="text-base font-normal text-muted">
+              My TEDx Talk
+            </span>
+            <span className="text-base font-normal text-muted">
+              Speaking Events
+            </span>
+            <Link href="/portfolio/rally-the-local">
+              <span className="text-base font-normal text-muted">
+                Rally the Locals
+              </span>
+            </Link>
+            <Link href="/portfolio/agile-workshops">
+              <span className="text-base font-normal text-muted">
+                Agile Workshops
+              </span>
+            </Link>
           </div>
           <div className="flex flex-col gap-2.25">
             <span className="pb-0.75 text-base font-semibold text-ink">My Services</span>
