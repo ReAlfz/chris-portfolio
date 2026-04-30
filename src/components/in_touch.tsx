@@ -1,13 +1,63 @@
+'use client'
+
+import { fetchApi } from "@/lib/api_service";
 import { Archivo } from "next/font/google";
 import contactBg from "../../public/images/Always Here to Chat BG.png";
 import Image from "next/image";
+import { useState } from "react";
 
 const archivo = Archivo({
     variable: "--font-archivo",
     subsets: ["latin"],
 });
 
+type FormData = {
+    name: string;
+    email: string;
+    topic: string;
+    subject: string;
+    message: string;
+};
+
+type SubmitState = 'idle' | 'loading' | 'success' | 'error';
+
 export default function InTouch() {
+    const [submitState, setSubmitState] = useState<SubmitState>('idle');
+    const [form, setForm] = useState<FormData>({
+        name: '',
+        email: '',
+        topic: '',
+        subject: '',
+        message: '',
+    });
+
+    const isFormValid =
+        form.name.trim() !== '' &&
+        form.email.trim() !== '' &&
+        form.topic !== '' &&
+        form.subject.trim() !== '' &&
+        form.message.trim() !== '';
+
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    ) => {
+        setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const handleSubmit = async () => {
+        if (!isFormValid || submitState === 'loading') return;
+
+        setSubmitState('loading');
+        try {
+            await fetchApi('contact-submissions', { method: 'POST' })
+            setSubmitState('success');
+        } catch (err) {
+            console.error(err);
+            setSubmitState('error');
+        }
+    };
+
+
     const fieldClass = `h-10 w-full rounded-[2px] bg-card-bar px-3 text-sm font-medium leading-[1.2] text-on-brand placeholder:text-muted ${archivo.className}`;
 
     return (
@@ -70,6 +120,8 @@ export default function InTouch() {
                                 name="name"
                                 placeholder="Your Name"
                                 autoComplete="name"
+                                value={form.name}
+                                onChange={handleChange}
                                 className={fieldClass}
                             />
                         </div>
@@ -83,6 +135,8 @@ export default function InTouch() {
                                 name="email"
                                 placeholder="E-Mail Address"
                                 autoComplete="email"
+                                value={form.email}
+                                onChange={handleChange}
                                 className={fieldClass}
                             />
                         </div>
@@ -93,6 +147,8 @@ export default function InTouch() {
                             <select
                                 id="portfolio-topic"
                                 name="topic"
+                                value={form.topic}
+                                onChange={handleChange}
                                 className={`${fieldClass} appearance-auto`}
                                 defaultValue=""
                             >
@@ -113,6 +169,8 @@ export default function InTouch() {
                                 type="text"
                                 name="subject"
                                 placeholder="Subject"
+                                value={form.subject}
+                                onChange={handleChange}
                                 className={fieldClass}
                             />
                         </div>
@@ -125,9 +183,35 @@ export default function InTouch() {
                                 name="message"
                                 placeholder="Message"
                                 rows={5}
+                                value={form.message}
+                                onChange={handleChange}
                                 className={`${fieldClass} min-h-30 resize-y py-2.5`}
                             />
                         </div>
+
+                        {submitState === 'error' && (
+                            <p className="text-red-400 text-sm text-start">
+                                Something went wrong. Please try again.
+                            </p>
+                        )}
+
+                        <button
+                            onClick={handleSubmit}
+                            disabled={!isFormValid || submitState === 'loading' || submitState === 'success'}
+                            className={`bg-brand w-full h-12 rounded-sm transition-all duration-300
+                                ${isFormValid && submitState === 'idle'
+                                    ? 'bg-brand cursor-pointer'
+                                    : submitState === 'success'
+                                        ? 'bg-green-600 cursor-default'
+                                        : 'bg-brand/40 cursor-not-allowed'
+                                }`}>
+                            <span className={`text-xl text-white font-semibold ${archivo.className}`}>
+                                {submitState === 'loading' && 'Sending...'}
+                                {submitState === 'success' && '✓ Message Sent'}
+                                {submitState === 'error' && 'Send Message'}
+                                {submitState === 'idle' && 'Send Message'}
+                            </span>
+                        </button>
                     </form>
                 </div>
             </div>
